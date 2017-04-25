@@ -13,7 +13,6 @@ public class TestProxy {
     public static void main(String[] args) {
         IGamePlayer gamePlayer = new GamePlayer("zhangshan");
         InvocationHandler gamePlayerProxy = new GamePlayerHandler(gamePlayer);
-        ClassLoader cl = gamePlayerProxy.getClass().getClassLoader();
         IGamePlayer proxy = DynamicProxy.newProxyInstance(gamePlayer.getClass().getInterfaces(), gamePlayerProxy);
         System.out.println("begin time" + System.currentTimeMillis());
         proxy.login("zhangsan", "123456");
