@@ -8,8 +8,7 @@ package material.com.materialmodule.Proxy;
 public class TestProxy {
 
     public static void main(String[] args) {
-        IGamePlayer gamePlayer = new GamePlayer("zhangsan");
-        IGamePlayer gamePlayerProxy = new GamePlayerProxy(gamePlayer);
+        IGamePlayer gamePlayerProxy = new GamePlayerProxy("zhangsan");
         System.out.println("begin time" + System.currentTimeMillis());
         gamePlayerProxy.login("zhangsan", "123456");
         gamePlayerProxy.killBoss();
