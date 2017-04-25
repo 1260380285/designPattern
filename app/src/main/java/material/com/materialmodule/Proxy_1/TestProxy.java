@@ -1,7 +1,6 @@
 package material.com.materialmodule.Proxy_1;
 
 import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Proxy;
 
 
 /**
@@ -15,7 +14,7 @@ public class TestProxy {
         IGamePlayer gamePlayer = new GamePlayer("zhangshan");
         InvocationHandler gamePlayerProxy = new GamePlayerHandler(gamePlayer);
         ClassLoader cl = gamePlayerProxy.getClass().getClassLoader();
-        IGamePlayer proxy = (IGamePlayer) Proxy.newProxyInstance(cl, gamePlayer.getClass().getInterfaces(), gamePlayerProxy);
+        IGamePlayer proxy = DynamicProxy.newProxyInstance(gamePlayer.getClass().getInterfaces(), gamePlayerProxy);
         System.out.println("begin time" + System.currentTimeMillis());
         proxy.login("zhangsan", "123456");
         proxy.killBoss();
