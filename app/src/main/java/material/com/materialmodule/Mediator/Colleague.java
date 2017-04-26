@@ -9,7 +9,7 @@ public abstract class Colleague {
 
     protected AbstractMediator mediator;
 
-    public Colleague(AbstractMediator mediator) {
+    protected Colleague(AbstractMediator mediator) {
         this.mediator = mediator;
     }
 }
